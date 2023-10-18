@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,11 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/',[LoginController::class,'index']);
+Route::post('/',[LoginController::class,'authenticate']);
+
 Route::get('/Register',[RegisterController::class,'index']);
 Route::post('/Register',[RegisterController::class,'store']);
 
+Route::get('/database', function(){
+    return view ('database');
+});

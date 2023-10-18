@@ -60,18 +60,34 @@
                                                 aria-label="Close"></button>
                                         </div>
                                     @endif
+                                    @if (session()->has('LoginError'))
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            {{ session('LoginError') }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    @endif
                                     <h1 class="gifts_text">Login</h1>
-                                    <form action="/" {{-- method="POST" --}} class="col-lg-10">
-                                        {{-- @csrf --}}
+                                    <form action="/" class="col-lg-10" method="post">
+                                        @csrf
                                         <div class="form-floating">
-                                            <input type="text" name="Username" class="form-control" id="username"
-                                                autofocus required>
-                                            <label for="username">Username</label>
+                                            <input type="text" name="Email"
+                                                class="form-control @error('Email') is-invalid @enderror "
+                                                id="email" autofocus required>
+                                            <label for="email">Email</label>
+                                            @error('Email')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }} </div>
+                                            @enderror
                                         </div>
                                         <div class="form-floating">
                                             <input type="password" name="Password" class="form-control"
                                                 id="password"required>
                                             <label for="password">Password</label>
+                                            @error('Password')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }} </div>
+                                            @enderror
                                         </div>
                                         <button class="btn btn-lg btn-primary">Login</button>
                                     </form>
@@ -109,20 +125,20 @@
     <script src="{{ asset('rea-1.0.0') }}/js/owl.carousel.js"></script>
     <script src="{{ asset('rea-1.0.0') }}/https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js">
     </script>
-        $(document).ready(function() {
-            $(".fancybox").fancybox({
-                openEffect: "none",
-                closeEffect: "none"
-            });
+    $(document).ready(function() {
+    $(".fancybox").fancybox({
+    openEffect: "none",
+    closeEffect: "none"
+    });
 
-            $(".zoom").hover(function() {
+    $(".zoom").hover(function() {
 
-                $(this).addClass('transition');
-            }, function() {
+    $(this).addClass('transition');
+    }, function() {
 
-                $(this).removeClass('transition');
-            });
-        });
+    $(this).removeClass('transition');
+    });
+    });
     </script>
     <script>
         function openNav() {
