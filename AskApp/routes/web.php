@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,4 @@ Route::post('/Register',[RegisterController::class,'store']);
 Route::get('/database', function(){
     return view ('database');
 });
+

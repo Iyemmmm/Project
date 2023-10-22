@@ -55,25 +55,25 @@
                             @csrf
                             <div class="form-floating">
                                 <label for="nama">Nama</label>
-                                <input type="text" name="Nama"
-                                class="form-control @error('Nama') is-invalid @enderror" id="nama" autofocus value="{{old('Nama')}}">
-                                @error('Nama')
+                                <input type="text" name="nama"
+                                class="form-control @error('nama') is-invalid @enderror" id="nama" autofocus value="{{old('nama')}}">
+                                @error('nama')
                                     <div class="invalid-feedback">
                                         {{$message}}                                 </div>
                                 @enderror
                             </div>
                             <div class="form-floating">
                                 <label for="email">Email Address</label>
-                                <input type="email" name="Email" class="form-control @error('Email') is-invalid @enderror" id="email" value="{{old('Email')}}">
-                                @error('Email')
+                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{old('email')}}">
+                                @error('email')
                                     <div class="invalid-feedback">
                                         {{$message}}                                  </div>
                                 @enderror
                             </div>
                             <div class="form-floating">
                                 <label for="username">Username</label>
-                                <input type="text" name="Username" class="form-control @error('Username') is-invalid @enderror" id="username" value="{{old('Username')}}">
-                                @error('Username')
+                                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" value="{{old('username')}}">
+                                @error('username')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
@@ -81,8 +81,8 @@
                             </div>
                             <div class="form-floating">
                                 <label for="password">Password</label>
-                                <input type="password" name="Password" class="form-control @error('Password') is-invalid @enderror" id="password" value="{{old('Password')}}">
-                                @error('Password')
+                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" value="{{old('password')}}">
+                                @error('password')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>
@@ -90,9 +90,9 @@
                             </div>
                             <div class="form-floating">
                                 <label for="password">Confirm Password</label>
-                                <input type="password" name="Password_confirmation" class="form-control @error('Password_confirmation') is-invalid @enderror"
+                                <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror"
                                 id="password">
-                                @error('Password_confirmation')
+                                @error('password_confirmation')
                                     <div class="invalid-feedback">
                                         {{$message}}
                                     </div>

@@ -71,20 +71,20 @@
                                     <form action="/" class="col-lg-10" method="post">
                                         @csrf
                                         <div class="form-floating">
-                                            <input type="text" name="Email"
-                                                class="form-control @error('Email') is-invalid @enderror "
+                                            <input type="text" name="email"
+                                                class="form-control @error('email') is-invalid @enderror "
                                                 id="email" autofocus required>
                                             <label for="email">Email</label>
-                                            @error('Email')
+                                            @error('email')
                                                 <div class="invalid-feedback">
                                                     {{ $message }} </div>
                                             @enderror
                                         </div>
                                         <div class="form-floating">
-                                            <input type="password" name="Password" class="form-control"
+                                            <input type="password" name="password" class="form-control"
                                                 id="password"required>
                                             <label for="password">Password</label>
-                                            @error('Password')
+                                            @error('password')
                                                 <div class="invalid-feedback">
                                                     {{ $message }} </div>
                                             @enderror
